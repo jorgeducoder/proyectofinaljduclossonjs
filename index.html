@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simula.css">
+    <title>Recetas y Costos</title>
+    <link id="u-theme-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+</head>
+
+<body>
+
+    <div class="container">
+       
+        <div class="opciones-elegir">
+            <h1> Recetas y Costos</h1>
+            <div class="lopciones">
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 1. - Lista de Ingredientes </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 2. - Lista de Unidades </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 3. - Lista de Unidades y Equivalencias </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 4. - Lista de Ingredientes de una Receta </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 5. - Lista de Recetas disponibles </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 6. - Calculo del Costo y precio de venta de una Receta </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 7. - Exportar una receta a JSON </h3>
+                    </li>
+                </ul>
+                <ul class="lista-opciones">
+                    <li class="unaopcion">
+                        <h3> 8. - Importar una receta de JSON </h3>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="selecopcion">
+                <div id="opcion">
+                    <p>Ingrese la opcion: </p>
+                </div>
+                <div>
+                    <input class="iOpcion" type="number" value="1" min="1" id="iOpcion">
+                </div>
+                
+                <div id="cReceta">
+                    <p>Ingrese la receta: </p>
+                </div>
+                <div>
+                    <input class="iReceta" type="text" id="iReceta">
+                </div>
+                
+                <div id="porcentaje">
+                    <p>Ingrese porcentaje de ganancia: </p>
+                </div>
+                <div>
+                    <input class="iGanancia" type="number" id="iGanancia" value="0" min="1" max="99">
+                </div>
+                <button id="ir">Ir</button>
+            </div>
+        </div>
+
+
+
+        <div id="modal" class="modal-container">
+            <div class="modal-content">
+                <div id="titulos">
+
+                </div>
+                <div id="detalle">
+
+                </div>
+                <div id="close">
+                    <p class="close"> Cerrar listado </p>
+                </div>
+            </div>
+
+        </div>
+        <script src="simula.js"></script>
+
+    </div>
+
+</body>
+
+</html>

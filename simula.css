@@ -1,0 +1,178 @@
+/* reset css */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/pizza2.jpg);
+    background-size: cover;
+    /* background-color: rgb(128, 128, 128);*/
+    /*z-index: 1;*/
+
+
+}
+
+.opciones-elegir h1 {
+
+    color: black;
+    font-size: 55px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    /*con posicion relative en H y P el H ocupa todo el ancho de la pantalla y baja el P */
+
+
+}
+
+.opciones-elegir {
+    display: inline-block;
+
+}
+
+.unaopcion {
+    margin-bottom: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: rgb(3, 6, 48);
+
+}
+
+.selecopcion p {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    color: rgb(241, 241, 227);
+}
+
+#opcion {
+    margin: 15px;
+    font-weight: 200px;
+}
+
+#iOpcion {
+
+    width: 50px;
+    height: 25px;
+    border: 3px solid rgb(117, 78, 207);
+    font-weight: normal;
+    font-family: roboto;
+}
+
+#cReceta {
+    margin: 15px;
+    font-weight: 200px;
+}
+
+#iReceta {
+    width: 130px;
+    height: 35px;
+    border: 3px solid rgb(117, 78, 207);
+    font-weight:normal;
+    font-family: roboto;
+    font-size: larger;
+
+}
+
+#porcentaje {
+    margin: 15px;
+    font-weight: 200px;
+}
+
+#iGanancia {
+
+    width: 60px;
+    height: 30px;
+    border: 3px solid rgb(117, 78, 207);
+    font-weight: normal;
+    font-family: roboto;
+    font-size: larger;
+}
+
+#ir {
+    margin: 15px;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+    
+    font-weight: bold;
+    font-family: roboto;
+    font-size: larger;
+    cursor: pointer;
+    border-radius: 40px;
+    line-height: 50px;
+    width: 100px;
+   
+}
+
+#ir:hover {
+    background-color: white;
+    color: black;
+}
+
+/* modal */
+
+.modal-content {
+    width: 600px;
+    height: auto;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    /*background-color: antiquewhite;*/
+    text-align: center;
+    display: block;
+
+    justify-content: center;
+    /* align-items: center;*/
+
+}
+
+.close {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    /* border-radius: 10px;*/
+    background-color: hwb(294 8% 71% / 0.671);
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    /* visibility: hidden;*/
+
+}
+
+.close p {
+    color: beige;
+    font-weight: 400;
+}
+
+.close:hover {
+    background-color: burlywood;
+}
+
+#titulos {
+    background-color: hwb(256 50% 39% / 0.671);
+
+}
+
+#detalle {
+
+    background-color: rgba(238, 230, 124, 0.671);
+    bottom: 20px;
+    /*width: 600px;*/
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "idreceta": "Scones",
+        "iding": "harina",
+        "canting": 0.5,
+        "unidading": "kg"
+    },
+    {
+        "idreceta": "Scones",
+        "iding": "polvo de hornear",
+        "canting": 15,
+        "unidading": "g"
+    },
+    {
+        "idreceta": "Scones",
+        "iding": "sal",
+        "canting": 10,
+        "unidading": "g"
+    },
+    {
+        "idreceta": "Scones",
+        "iding": "leche",
+        "canting": 190,
+        "unidading": "ml"
+    },
+    {
+        "idreceta": "Scones",
+        "iding": "manteca",
+        "canting": 180,
+        "unidading": "ml"
+    }
+]
