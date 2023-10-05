@@ -28,7 +28,7 @@
 
 .opciones-elegir h1 {
 
-    color: black;
+    color: rgb(194, 202, 223);
     font-size: 55px;
     font-family: 'Times New Roman';
     font-weight: bold;
@@ -45,10 +45,10 @@
 }
 
 .unaopcion {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
-    color: rgb(3, 6, 48);
+    color: rgb(5, 13, 126);
 
 }
 
@@ -57,7 +57,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: larger;
-    color: rgb(241, 241, 227);
+    color: rgb(241, 242, 245);
 }
 
 #opcion {
@@ -67,11 +67,12 @@
 
 #iOpcion {
 
-    width: 50px;
-    height: 25px;
-    border: 3px solid rgb(117, 78, 207);
+    width: 60px;
+    height: 30px;
+    border: 3px solid rgb(121, 155, 136);
     font-weight: normal;
     font-family: roboto;
+    font-size: larger;
 }
 
 #cReceta {
@@ -82,7 +83,7 @@
 #iReceta {
     width: 130px;
     height: 35px;
-    border: 3px solid rgb(117, 78, 207);
+    border: 3px solid rgb(121, 155, 136);
     font-weight:normal;
     font-family: roboto;
     font-size: larger;
@@ -98,7 +99,7 @@
 
     width: 60px;
     height: 30px;
-    border: 3px solid rgb(117, 78, 207);
+    border: 3px solid rgb(121, 155, 136);
     font-weight: normal;
     font-family: roboto;
     font-size: larger;
@@ -148,7 +149,7 @@
     height: 50px;
     line-height: 50px;
     /* border-radius: 10px;*/
-    background-color: hwb(294 8% 71% / 0.671);
+    background-color: hwb(294 4% 43% / 0.400);
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
@@ -166,13 +167,14 @@
 }
 
 #titulos {
-    background-color: hwb(256 50% 39% / 0.671);
-
+   /* background-color: hwb(255 25% 63% / 0.671);*/
+   background-color: hwb(254 30% 30% / 0.400);
 }
 
 #detalle {
 
-    background-color: rgba(238, 230, 124, 0.671);
-    bottom: 20px;
+   /* background-color: rgba(238, 230, 124, 0.671);*/
+   background-color: rgba(193, 223, 202, 0.400);
+   bottom: 20px;
     /*width: 600px;*/
 }

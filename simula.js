@@ -847,8 +847,8 @@ function vcostoreceta() {
 
     var mostrarprecioreceta = 0;
     let porcentajeGanancia
-    let costo = {pcosto: 0};
-    let venta = {pventa: 0};
+    let costoventa = {pcosto: 0, pventa: 0};
+    //let venta = {pventa: 0};
 
 
     let contenedor = document.getElementById("titulos")
@@ -871,18 +871,20 @@ function vcostoreceta() {
 
 
 
-        let detalle = "<br><br>El precio de costo en U$S es" + " " + mostrarprecioreceta.toFixed(2) + "<br></br>";
+        //let detalle = "<br><br>El precio de costo en U$S es" + " " + mostrarprecioreceta.toFixed(2) + "<br></br>";
+        let detalle = "<br><br>El precio de costo en U$S de" + "<br>";
         document.getElementById("detalle").innerHTML = detalle;
 
         // Aqui busco la receta, muestro sus atributos mas el precio  
-        let recetaEncontrada = dbRecetas.filter(
+        let recetaEncontrada = dbRecetas.find(
             (elm) => elm.nombre === unareceta
         );
-       // console.log(...recetaEncontrada);
-        costo.pcosto = mostrarprecioreceta.toFixed(2);
-        let recetacosto = { ...recetaEncontrada, ...costo };
+       
+        costoventa.pcosto = mostrarprecioreceta.toFixed(2);
+        let recetacosto = { ...recetaEncontrada, ...costoventa };
         console.log(recetacosto)
-        detalle += "<br></br>" + recetacosto[0].nombre + recetacosto[0].porciones + recetacosto[0].recetadesc + costo.pcosto + "<br></br>";
+        //detalle += "<br></br>" + recetacosto.nombre + "     " + recetacosto.porciones + "     " + recetacosto.recetadesc + "     " + recetacosto.pcosto + "<br></br>";
+        detalle += "<br>" + recetacosto.nombre + "  es   "  + recetacosto.pcosto + "<br></br>";
         document.getElementById("detalle").innerHTML = detalle;
        
         
@@ -891,7 +893,14 @@ function vcostoreceta() {
         if (porcentajeGanancia > 0) {
 
             let precioventa = mostrarprecioreceta * (1 + (porcentajeGanancia / 100));
-            detalle += "<br></br>El precio de venta en U$S es" + " " + precioventa.toFixed(2) + "<br></br>";
+
+            recetacosto.pventa = precioventa.toFixed(2);
+
+            //detalle += "<br></br>El precio de venta en U$S es" + " " + precioventa.toFixed(2) + "<br></br>";
+            detalle += "<br></br>El precio de venta en U$S de:" + "<br>";
+            document.getElementById("detalle").innerHTML = detalle;
+
+            detalle += "<br>" + recetacosto.nombre + "  es   "  + recetacosto.pventa + "<br></br></br>";
             document.getElementById("detalle").innerHTML = detalle;
 
         } else {
@@ -944,13 +953,14 @@ function buscarprecio(pingrediente, punidad, pcanting) {
                     precioreceta = (ingredienteencontrado[0].precio * cantidadconequivalencia);
 
                 } else {
-                    alert("No se encontro una equivalencia, no se calcula el costo para ese ingrediente" + "  " + pingrediente)
+                    
+                    Swal.fire("No se encontro una equivalencia, no se calcula el costo para ese ingrediente" + "  " + pingrediente)
                 }
             }
         }
         return precioreceta
     } else {
-        alert("Ingredientes repetidos o no existe en array ingredientes" + "  " + pingrediente);
+        Swal.fire("Ingredientes repetidos o no existe en array ingredientes" + "  " + pingrediente);
         return 0;
     }
 }
@@ -968,8 +978,7 @@ function expreceta() {
 }
 
 function impreceta() {
-    //const recetastring = JSON.stringify(dbIngRecetas);
-   // console.log(recetastring)
+    
 
    fetch(url)
    .then(res => res.json())
@@ -981,8 +990,7 @@ function GuardarenDB(recetas) {
     let ingreceta = {};
     let idnuevareceta;
    
- //   console.log(recetas);
-//alert("importado")
+
 if (importado === "false") {
     recetas.forEach(ingrediente => {
           dbIngRecetas.push(ingrediente)
@@ -992,22 +1000,31 @@ if (importado === "false") {
         })
         if (dbRecetas.includes(idnuevareceta)){
             // Si ingrese la receta en dbRecetas no hago nada
-            alert("no inclui dbrecetas porque ya esta incluida")
+           
+            Swal.fire("no inclui dbrecetas porque ya esta incluida");
       } else {
         
         let nuevareceta = new NuevasRecetas(idnuevareceta, 1, "Como se mezclan los ingredientes")
        
-        //console.log(nuevareceta);
+        
         dbRecetas.push(nuevareceta);
-        //alert("inclui" + nuevareceta)
+        
         importado = "true"
         let contenedor = document.getElementById("titulos")
         contenedor.innerHTML = "<h2><br> Recetas importadas</h2><br><p> Archivo JSON con las recetas e ingredientes importados.</p><br>"
-        let detalle = JSON.stringify(nuevareceta);
+        
+        //let detalle = "<br>"
+        //document.getElementById("detalle").innerHTML = detalle
+        
+        let detalle = "<br>" + JSON.stringify(nuevareceta) + "<br><br>";
         document.getElementById("detalle").innerHTML = detalle
+        
+       //detalle += "<br>"
+        //document.getElementById("detalle").innerHTML = detalle
       } 
 }else{
-        alert("Las recetas ya fueron importadas")
+        
+        Swal.fire("Las recetas ya fueron importadas");
 }
 
 }
